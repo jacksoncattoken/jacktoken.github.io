@@ -123,6 +123,27 @@
       width: 100%;
     }
     
+    .donate-btn {
+      color: var(--dark);
+      background: var(--primary);
+      font-size: 1rem;
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .donate-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--glow);
+    }
+    
     .menu-toggle {
       display: none;
       cursor: pointer;
@@ -309,7 +330,7 @@
     }
     
     .about-section {
-      background: url('src/assets/about-bg.jpg') no-repeat center/cover;
+      background: url('src/assets/2.png') no-repeat center/cover;
       position: relative;
     }
     
@@ -413,10 +434,11 @@
     }
     
     .tokenomics-value {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       font-weight: bold;
       color: var(--primary);
       margin: 10px 0;
+      word-break: break-word;
     }
     
     .chart-container {
@@ -585,7 +607,7 @@
     
     /* Buy Section */
     .buy-section {
-      background: url('src/assets/buy-bg.jpg') no-repeat center/cover;
+      background: url('src/assets/3.png') no-repeat center/cover;
       position: relative;
     }
     
@@ -1368,7 +1390,7 @@
 <body>
   <!-- Preloader -->
   <div class="preloader">
-    <img src="src/assets/1.png" alt="$JACK" />
+    <img src="src/assets/4.png" alt="$JACK" />
   </div>
 
   <!-- Navbar -->
@@ -1385,6 +1407,10 @@
       <a href="#buy">Buy</a>
       <a href="#donate">Donate</a>
     </div>
+    <a href="#donate" class="donate-btn">
+      <i class="fas fa-gift"></i>
+      Support Jack
+    </a>
     <div class="menu-toggle">
       <i class="fas fa-bars"></i>
     </div>
@@ -1461,8 +1487,8 @@
       <div class="tokenomics-grid">
         <div class="tokenomics-card">
           <h3>Total Supply</h3>
-          <div class="tokenomics-value">1,000,000,000</div>
-          <p>A billion tokens for billions of believers</p>
+          <div class="tokenomics-value">21,000,000,000,000</div>
+          <p>Trillions of tokens for our global cat army</p>
         </div>
         <div class="tokenomics-card">
           <h3>Buy Tax</h3>
@@ -1530,4 +1556,317 @@
       </div>
     </div>
   </section>
-```
+
+  <!-- Community Section -->
+  <section id="community" class="community-section">
+    <div class="container">
+      <h2>Join the Cult</h2>
+      <p>Embrace the baldness. Follow us. Spread the word. ALL HAIL $JACK!</p>
+
+      <div class="community-stats">
+        <div class="stat-box">
+          <span class="stat-value">10K+</span>
+          <span class="stat-label">Telegram Members</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-value">8K+</span>
+          <span class="stat-label">Twitter Followers</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-value">5K+</span>
+          <span class="stat-label">Holders</span>
+        </div>
+      </div>
+
+      <div class="social-grid">
+        <div class="social-card">
+          <div class="social-icon">
+            <i class="fab fa-telegram"></i>
+          </div>
+          <h3>Telegram</h3>
+          <p>Join our active Telegram community for live updates and discussions.</p>
+          <a href="https://t.me/jackbaldcult" target="_blank" class="cta-btn outlined">Join Now</a>
+        </div>
+        <div class="social-card">
+          <div class="social-icon">
+            <i class="fab fa-twitter"></i>
+          </div>
+          <h3>Twitter</h3>
+          <p>Follow us on Twitter for the latest news and announcements.</p>
+          <a href="https://x.com/jack_cattoken" target="_blank" class="cta-btn outlined">Follow</a>
+        </div>
+        <div class="social-card">
+          <div class="social-icon">
+            <i class="fab fa-discord"></i>
+          </div>
+          <h3>Discord</h3>
+          <p>Join our Discord for community events and exclusive content.</p>
+          <a href="#" target="_blank" class="cta-btn outlined">Coming Soon</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Buy Section -->
+  <section id="buy" class="buy-section">
+    <div class="container">
+      <h2>How to Buy $JACK</h2>
+      <p>Join the revolution and get your $JACK tokens today!</p>
+
+      <div class="exchange-grid">
+        <div class="exchange-card">
+          <div class="exchange-logo">
+            <i class="fas fa-wallet"></i>
+          </div>
+          <h3>Step 1</h3>
+          <p>Create a Solana wallet (Phantom, Solflare)</p>
+        </div>
+        <div class="exchange-card">
+          <div class="exchange-logo">
+            <i class="fas fa-coins"></i>
+          </div>
+          <h3>Step 2</h3>
+          <p>Buy or transfer SOL to your wallet</p>
+        </div>
+        <div class="exchange-card">
+          <div class="exchange-logo">
+            <i class="fas fa-exchange-alt"></i>
+          </div>
+          <h3>Step 3</h3>
+          <p>Connect to Raydium or Jupiter</p>
+        </div>
+        <div class="exchange-card">
+          <div class="exchange-logo">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3>Step 4</h3>
+          <p>Swap SOL for $JACK and join the cult!</p>
+        </div>
+      </div>
+
+      <div class="cta-buttons" style="margin-top: 40px; justify-content: center;">
+        <a href="#" target="_blank" class="cta-btn">
+          <i class="fas fa-external-link-alt"></i>
+          Buy on Raydium
+        </a>
+        <a href="#" target="_blank" class="cta-btn">
+          <i class="fas fa-external-link-alt"></i>
+          Buy on Jupiter
+        </a>
+        <a href="#" class="cta-btn outlined whitepaper-link">
+          <i class="fas fa-file-alt"></i>
+          Whitepaper
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donate Section -->
+  <section id="donate" class="donate-section">
+    <div class="container">
+      <h2>Support the Bald Cat God 🐾</h2>
+      <p>All donations go towards buying treats, toys, and luxury sweaters for Jack, the magnificent bald cat god! Help our divine feline leader live its best hairless life.</p>
+
+      <div class="wallets">
+        <div class="wallet">
+          <label>Ethereum (ETH, ERC-20):</label>
+          <div class="address-container">
+            <div id="eth-address" class="address">0xa84A4b995409A95d3B8df671f784D1b745780187</div>
+            <button class="copy-button" data-address="eth-address">📋 Copy</button>
+          </div>
+          <div class="qr-container">
+            <img src="src/assets/qr_eth.png" alt="ETH QR">
+          </div>
+        </div>
+        <div class="wallet">
+          <label>Bitcoin (BTC):</label>
+          <div class="address-container">
+            <div id="btc-address" class="address">bc1quye24ra5nenr22ms0n4r8q8mmzakv590axwcke</div>
+            <button class="copy-button" data-address="btc-address">📋 Copy</button>
+          </div>
+          <div class="qr-container">
+            <img src="src/assets/qr_btc.png" alt="BTC QR">
+          </div>
+        </div>
+        <div class="wallet">
+          <label>XRP:</label>
+          <div class="address-container">
+            <div id="xrp-address" class="address">rarvLofn4JzLSvsSV3z8poWpnd4o887W8u</div>
+            <button class="copy-button" data-address="xrp-address">📋 Copy</button>
+          </div>
+          <div class="qr-container">
+            <img src="src/assets/qr_xrp.png" alt="XRP QR">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h3>About $JACK</h3>
+          <p>The ultimate Solana memecoin inspired by the divine bald cat god. Join the cult and embrace the baldness!</p>
+          <div class="footer-social">
+            <a href="https://t.me/jackbaldcult" target="_blank"><i class="fab fa-telegram"></i></a>
+            <a href="https://x.com/jack_cattoken" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#tokenomics">Tokenomics</a></li>
+            <li><a href="#roadmap">Roadmap</a></li>
+            <li><a href="#community">Community</a></li>
+            <li><a href="#buy">How to Buy</a></li>
+            <li><a href="#donate">Donate</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Stay Updated</h3>
+          <p>Subscribe to our newsletter for the latest updates and announcements.</p>
+          <div class="subscribe-form">
+            <input type="email" class="subscribe-input" placeholder="Your email address">
+            <button class="subscribe-btn">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2025 $JACK - Bald Cat God Token. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Price ticker -->
+  <div class="price-ticker">
+    <div class="ticker-wrapper">
+      <div class="ticker-item">
+        <span class="ticker-name">$JACK:</span>
+        <span class="ticker-price">$0.00001245</span>
+        <span class="ticker-change positive">+15.7%</span>
+      </div>
+      <div class="ticker-item">
+        <span class="ticker-name">Market Cap:</span>
+        <span class="ticker-price">$2,450,000</span>
+      </div>
+      <div class="ticker-item">
+        <span class="ticker-name">Holders:</span>
+        <span class="ticker-price">5,247</span>
+        <span class="ticker-change positive">+356 today</span>
+      </div>
+      <div class="ticker-item">
+        <span class="ticker-name">SOL:</span>
+        <span class="ticker-price">$178.45</span>
+        <span class="ticker-change positive">+3.2%</span>
+      </div>
+      <div class="ticker-item">
+        <span class="ticker-name">BTC:</span>
+        <span class="ticker-price">$78,345.67</span>
+        <span class="ticker-change positive">+1.8%</span>
+      </div>
+      <div class="ticker-item">
+        <span class="ticker-name">ETH:</span>
+        <span class="ticker-price">$3,742.12</span>
+        <span class="ticker-change negative">-0.5%</span>
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="ticker-item">
+        <span class="ticker-name">$JACK:</span>
+        <span class="ticker-price">$0.00001245</span>
+        <span class="ticker-change positive">+15.7%</span>
+      </div>
+      <div class="ticker-item">
+        <span class="ticker-name">Market Cap:</span>
+        <span class="ticker-price">$2,450,000</span>
+      </div>
+      <div class="ticker-item">
+        <span class="ticker-name">Holders:</span>
+        <span class="ticker-price">5,247</span>
+        <span class="ticker-change positive">+356 today</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal">
+    <div class="modal-content">
+      <span class="close-modal"><i class="fas fa-times"></i></span>
+      <h2>$JACK Token Sale Coming Soon!</h2>
+      <p>Our public sale will begin in:</p>
+      <div class="countdown">
+        <div class="countdown-item">
+          <div id="countdown-days" class="countdown-value">00</div>
+          <div class="countdown-label">Days</div>
+        </div>
+        <div class="countdown-item">
+          <div id="countdown-hours" class="countdown-value">00</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-item">
+          <div id="countdown-minutes" class="countdown-value">00</div>
+          <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-item">
+          <div id="countdown-seconds" class="countdown-value">00</div>
+          <div class="countdown-label">Seconds</div>
+        </div>
+      </div>
+      <p>Join our Telegram group to stay updated and be the first to participate!</p>
+      <a href="https://t.me/jackbaldcult" target="_blank" class="cta-btn">Join Telegram</a>
+      <a href="#" class="whitepaper-btn">Download Whitepaper</a>
+    </div>
+  </div>
+
+  <script>
+    // Initialize the chart
+    document.addEventListener('DOMContentLoaded', function() {
+      const ctx = document.getElementById('tokenomicsChart');
+      
+      if (ctx && typeof Chart !== 'undefined') {
+        new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+            labels: ['Public Sale', 'Liquidity', 'Team', 'Marketing', 'Development', 'Charity'],
+            datasets: [{
+              data: [40, 20, 15, 15, 5, 5],
+              backgroundColor: [
+                '#ffe14b',
+                '#ff6b6b',
+                '#4cd2ff',
+                '#9d4edd',
+                '#4ade80',
+                '#fb8500'
+              ],
+              borderWidth: 0
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: {
+                  color: '#f5f5f5',
+                  font: {
+                    size: 14
+                  }
+                }
+              }
+            }
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
