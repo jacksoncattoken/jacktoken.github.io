@@ -18,7 +18,7 @@
       position: relative;
       width: 100%;
       height: 100vh;
-      background: url('/mnt/data/1.png') no-repeat center/cover;
+      background: url('src/assets/1.png') no-repeat center/cover;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -104,18 +104,33 @@
       border-radius: 10px;
       width: 90%;
       max-width: 600px;
-      word-break: break-word;
+      word-break: break-all;
+      position: relative;
     }
     .wallet label {
       color: #ffe14b;
       font-weight: bold;
-      display: block;
-      font-size: 1.1rem;
-      margin-bottom: 8px;
     }
     .wallet .address {
       margin: 10px 0;
       font-size: 1rem;
+    }
+    .copy-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #ffe14b;
+      color: #0d0d0d;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .wallet img {
+      margin-top: 10px;
+      width: 120px;
+      height: 120px;
     }
     @keyframes fadeIn {
       from { opacity: 0; }
@@ -126,15 +141,22 @@
       100% { opacity: 1; transform: translateY(0); }
     }
   </style>
+  <script>
+    function copyText(id) {
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text);
+      alert('Copied to clipboard!');
+    }
+  </script>
 </head>
 <body>
   <header>
     <h1>ALL HAIL THE BALD CAT GOD</h1>
     <p>Welcome to the cult of $JACK — the memecoin powered by pure bald cat energy!</p>
     <div class="social-links">
-      <a href="https://t.me/jackbaldcult" target="_blank">📢 Telegram</a>
-      <a href="https://x.com/jack_cattoken" target="_blank">🐦 Twitter</a>
-      <a class="buy-button" href="#" target="_blank">💸 Buy $JACK</a>
+      <a href="https://t.me/jackbaldcult" target="_blank">Telegram</a>
+      <a href="https://x.com/jack_cattoken" target="_blank">Twitter</a>
+      <a class="buy-button" href="#" target="_blank">Buy $JACK</a>
     </div>
   </header>
   <section>
@@ -153,17 +175,22 @@
     <h2>Support the Bald Cat God 🐾</h2>
     <div class="wallets">
       <div class="wallet">
-        <label>🦄 Ethereum (ETH, ERC-20):</label>
-        <div class="address">0xa84A4b995409A95d3B8df671f784D1b745780187</div>
+        <label>Ethereum (ETH, ERC-20):</label>
+        <button class="copy-button" onclick="copyText('eth-address')">📋 Copy</button>
+        <div id="eth-address" class="address">0xa84A4b995409A95d3B8df671f784D1b745780187</div>
+        <img src="src/assets/qr_eth.png" alt="ETH QR">
       </div>
       <div class="wallet">
-        <label>⚡ Bitcoin (BTC - Lightning):</label>
-        <div class="address">Node ID: 024112cce74f2557b414ce07f97fce5536f1f2bd67e64b786a13eaaf9ed1498c33</div>
-        <div class="address">Invoice/Wallet: vpub5VmxdbHUcPfSq8J4aw1fCehYUbxca1WtkDBSziXYFirpETzA5tzRS8mPBbfBy1VgdDHcNvSEFcSLWzNSmWSVdhn9HUV361BUtLX3kVYy7RL</div>
+        <label>Bitcoin (BTC):</label>
+        <button class="copy-button" onclick="copyText('btc-address')">📋 Copy</button>
+        <div id="btc-address" class="address">bc1quye24ra5nenr22ms0n4r8q8mmzakv590axwcke</div>
+        <img src="src/assets/qr_btc.png" alt="BTC QR">
       </div>
       <div class="wallet">
-        <label>💎 XRP:</label>
-        <div class="address">rarvLofn4JzLSvsSV3z8poWpnd4o887W8u</div>
+        <label>XRP:</label>
+        <button class="copy-button" onclick="copyText('xrp-address')">📋 Copy</button>
+        <div id="xrp-address" class="address">rarvLofn4JzLSvsSV3z8poWpnd4o887W8u</div>
+        <img src="src/assets/qr_xrp.png" alt="XRP QR">
       </div>
     </div>
   </section>
