@@ -3,177 +3,169 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>$JACK Token</title>
+  <title>$JACK — Bald Cat God Token</title>
   <style>
     body {
       margin: 0;
+      padding: 0;
+      background: #0d0d0d;
+      color: #f5f5f5;
       font-family: 'Arial', sans-serif;
-      background: #000;
-      color: #fff;
+      text-align: center;
       overflow-x: hidden;
     }
-
     header {
-      padding: 50px 20px;
-      text-align: center;
-      background: linear-gradient(135deg, #00FFC6 0%, #FF0080 100%);
-      color: #000;
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background: url('/mnt/data/1.png') no-repeat center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-shadow: 0 0 20px #000;
+      animation: fadeIn 2s ease-in-out;
     }
-
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255, 225, 75, 0.2) 0%, transparent 70%);
+      z-index: 1;
+      pointer-events: none;
+    }
+    header h1, header p, .social-links {
+      position: relative;
+      z-index: 2;
+    }
     header h1 {
-      font-size: 3em;
-      margin: 0;
+      margin: 20px 0 10px;
+      font-size: 3rem;
+      color: #ffe14b;
+      animation: textFade 2s ease forwards;
     }
-
     header p {
-      font-size: 1.2em;
-      margin-top: 10px;
+      font-size: 1.5rem;
+      margin: 0 20px;
+      max-width: 600px;
+      animation: textFade 2.5s ease forwards;
     }
-
-    .cta-links {
+    .social-links {
       margin-top: 30px;
       display: flex;
-      justify-content: center;
-      gap: 30px;
+      gap: 20px;
+      animation: textFade 3s ease forwards;
       flex-wrap: wrap;
+      justify-content: center;
     }
-
-    .cta-links a {
+    .social-links a, .buy-button {
+      color: #ffe14b;
+      font-size: 1.5rem;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 1.2em;
-      padding: 15px 25px;
-      border-radius: 50px;
-      color: #000;
-      background: #fff;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 15px #00FFC6;
+      padding: 10px 20px;
+      border: 2px solid #ffe14b;
+      border-radius: 8px;
+      transition: background 0.3s, color 0.3s;
     }
-
-    .cta-links a:hover {
-      background: #FF0080;
-      color: #fff;
-      box-shadow: 0 0 20px #FF0080;
+    .social-links a:hover, .buy-button:hover {
+      background: #ffe14b;
+      color: #0d0d0d;
     }
-
-    section#faces {
-      padding: 80px 20px;
-      background: radial-gradient(ellipse at center, #111 0%, #000 100%);
-      position: relative;
+    .buy-button {
+      margin-top: 20px;
+      display: inline-block;
     }
-
-    section#faces::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: url('/assets/stars.png') repeat;
-      opacity: 0.1;
-      z-index: 0;
+    section {
+      padding: 50px 20px;
+      animation: fadeIn 2s ease-in-out;
     }
-
-    section#faces h2 {
-      font-size: 2.8em;
+    .donate-section {
+      background: #1a1a1a;
+      padding: 40px 20px;
+      margin-top: 40px;
+    }
+    .donate-section h2 {
+      color: #ffe14b;
+      font-size: 2rem;
       margin-bottom: 20px;
-      position: relative;
-      z-index: 1;
     }
-
-    section#faces p {
-      font-size: 1.2em;
-      margin-bottom: 50px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .faces-grid {
+    .wallets {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      position: relative;
-      z-index: 1;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
     }
-
-    .face-card {
-      flex: 1 1 200px;
-      max-width: 250px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
+    .wallet {
+      background: #2a2a2a;
       padding: 20px;
-      box-shadow: 0 0 20px #00FFC6;
-      transition: transform 0.3s, box-shadow 0.3s;
-      animation: fadeIn 1s ease forwards;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      word-break: break-word;
     }
-
-    .face-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 30px #FF0080;
-    }
-
-    .face-card img {
-      width: 100%;
-      border-radius: 15px;
-    }
-
-    .face-card p {
-      margin-top: 15px;
+    .wallet label {
+      color: #ffe14b;
       font-weight: bold;
-      font-size: 1.1em;
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
     }
-
+    .wallet .address {
+      margin: 10px 0;
+      font-size: 1rem;
+    }
     @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
-
-    footer {
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9em;
-      color: #555;
-      background: #000;
-      margin-top: 50px;
+    @keyframes textFade {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
-
 <body>
   <header>
-    <h1>Temple of $JACK</h1>
-    <p>The One. The Only. The Eternal Cat.</p>
-
-    <div class="cta-links">
-      <a href="https://t.me/jackbaldcult" target="_blank">📲 Join Telegram</a>
-      <a href="https://x.com/jack_cattoken" target="_blank">🐦 Follow on X</a>
+    <h1>ALL HAIL THE BALD CAT GOD</h1>
+    <p>Welcome to the cult of $JACK — the memecoin powered by pure bald cat energy!</p>
+    <div class="social-links">
+      <a href="https://t.me/jackbaldcult" target="_blank">📢 Telegram</a>
+      <a href="https://x.com/jack_cattoken" target="_blank">🐦 Twitter</a>
+      <a class="buy-button" href="#" target="_blank">💸 Buy $JACK</a>
     </div>
   </header>
-
-  <section id="faces">
-    <h2>More Faces of <span style="color: #00FFC6;">$JACK</span></h2>
-    <p>One Cat. Infinite Faces. Eternal Cult.</p>
-
-    <div class="faces-grid">
-      <div class="face-card">
-        <img src="/assets/monk.png" alt="The Monk">
-        <p>The Monk</p>
+  <section>
+    <h2>About $JACK</h2>
+    <p>$JACK is not just a token. It's a revolution. It's a movement. It's a bald-headed cat cult taking over the Solana blockchain!</p>
+  </section>
+  <section>
+    <h2>Roadmap</h2>
+    <p>Phase 1: Launch $JACK. <br> Phase 2: Conquer social media. <br> Phase 3: Moon and beyond!</p>
+  </section>
+  <section>
+    <h2>Join the Cult</h2>
+    <p>Embrace the baldness. Follow us. Spread the word. ALL HAIL $JACK!</p>
+  </section>
+  <section class="donate-section">
+    <h2>Support the Bald Cat God 🐾</h2>
+    <div class="wallets">
+      <div class="wallet">
+        <label>🦄 Ethereum (ETH, ERC-20):</label>
+        <div class="address">0xa84A4b995409A95d3B8df671f784D1b745780187</div>
       </div>
-      <div class="face-card">
-        <img src="/assets/warlord.png" alt="The Warlord">
-        <p>The Warlord</p>
+      <div class="wallet">
+        <label>⚡ Bitcoin (BTC - Lightning):</label>
+        <div class="address">Node ID: 024112cce74f2557b414ce07f97fce5536f1f2bd67e64b786a13eaaf9ed1498c33</div>
+        <div class="address">Invoice/Wallet: vpub5VmxdbHUcPfSq8J4aw1fCehYUbxca1WtkDBSziXYFirpETzA5tzRS8mPBbfBy1VgdDHcNvSEFcSLWzNSmWSVdhn9HUV361BUtLX3kVYy7RL</div>
       </div>
-      <div class="face-card">
-        <img src="/assets/prophet.png" alt="The Prophet">
-        <p>The Prophet</p>
-      </div>
-      <div class="face-card">
-        <img src="/assets/emperor.png" alt="The Emperor">
-        <p>The Emperor</p>
+      <div class="wallet">
+        <label>💎 XRP:</label>
+        <div class="address">rarvLofn4JzLSvsSV3z8poWpnd4o887W8u</div>
       </div>
     </div>
   </section>
-
-  <footer>
-    Ⓒ 2025 Temple of $JACK. All rights reserved.
-  </footer>
 </body>
 </html>
